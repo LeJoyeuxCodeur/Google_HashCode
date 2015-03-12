@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 public class DataCenter {
 	private Slot[][] dataCenter;
@@ -26,12 +25,8 @@ public class DataCenter {
 	public int[] getFirstFreeIndex(int capacité){
 		for(int i = 0; i < dataCenter.length; i++){
 			for(int j = 0; j < dataCenter[0].length; j++){
-				if(dataCenter[i][j].isValidSlot()){
-					for(int k = 0; k < capacité - 1; k++){
-						if(dataCenter[i][j+k].isValidSlot())
-							return new int[]{i, j};
-					}
-				}
+				if(dataCenter[i][j].isValidSlot())
+					return new int[]{i, j+capacité}; // Ajoute le serveur juste arès un autre serveur, bug à corriger
 			}
 		}
 		return new int[]{-1, -1};

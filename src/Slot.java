@@ -27,6 +27,6 @@ public class Slot {
 		return isUsable() && getServer() == null;
 	}
 	public String toString(){
-		return server + ":" + usable;
+		return server + "/" + usable;
 	}
 }

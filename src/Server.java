@@ -21,4 +21,8 @@ public class Server {
 		this.taille = taille;
 		this.capacite = capacite;
 	}
+	
+	public String toString(){
+		return "(Serveur: " + taille+":"+capacite+")";
+	}
 }
